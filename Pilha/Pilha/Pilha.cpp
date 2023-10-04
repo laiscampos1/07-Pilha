@@ -59,7 +59,7 @@ void menu()
 void inicializar()
 {
 
-	// se a lista j� possuir elementos
+	// se a lista já possuir elementos
 	// libera a memoria ocupada
 	NO* aux = topo;
 	while (aux != NULL) {
@@ -83,16 +83,36 @@ void push()
 		return;
 	}
 
-	cout << "Digite o elemento: ";
+	
+
+	If cout << "Digite o elemento: ";
 	cin >> novo->valor;
 	novo->prox = NULL;
 
-
+	Else 
+	cout << "Digite o elemento: ";
+	cin >> novo->valor;
+	novo->prox = topo; 
+	topo = novo; 
 }
+
+
 
 void pop()
 {
+	{
+	if (topo != NULL) {
+		NO* paraExcluir = topo;
+		topo = topo->prox;
+		cout << "Elemento removido: " << paraExcluir->valor << endl;
+		free(paraExcluir); // Libera a memória do elemento removido
+	}
+	else {
+		cout << "Pilha Vazia" << endl;
+	}
+}
 
+	
 	
 
 }
